@@ -22,7 +22,7 @@ class DataSiswa{
   String jkelamin;
   
   
-  DataMahasiswa({ this.nama, this.kelas, this.jkelamin});
+  DataSiswa({ this.nama, this.kelas, this.jkelamin});
   
 }
 
@@ -33,7 +33,7 @@ class Siswa extends StatefulWidget {
 
 class _MyappState extends State<Siswa> {
   //deklarasi variabel
-  final txtnamamhs = TextEditingController();
+  final txtnamasiswa = TextEditingController();
   final txtjurusan = TextEditingController();
   final txtSKS = TextEditingController();
   
@@ -44,11 +44,11 @@ class _MyappState extends State<Siswa> {
     setState(() {
       data.add(ListTile(
         leading: Text(txtalamat.text),
-        title: Text(txtnamamhs.text),
+        title: Text(txtnamasiswa.text),
         subtitle: Text(txtkelas.text),
         trailing: Text(txtjkelamin.text),
       ));
-      txtnamamhs.clear();
+      txtnamasiswa.clear();
       txtkelas.clear();
       txtjkelamin.clear();
       txtalamat.clear();
@@ -65,7 +65,7 @@ class _MyappState extends State<Siswa> {
             children: <Widget>[
            
               TextField(
-                controller: txtnamamhs,
+                controller: txtnamasiswa,
                 decoration: InputDecoration(hintText: 'Nama Siswa'),
               ),
               TextField(
